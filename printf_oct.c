@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * print_oct - prints an octal number.
+ * printf_oct - prints an octal number.
  * @val: arguments.
  * Return: counter.
  */
-int print_oct(va_list val)
+int printf_oct(va_list val)
 {
 	int i;
 	int *array;
 	int counter = 0;
 	unsigned int num = va_arg(val, unsigned int);
-	unsigned int tem = num;
+	unsigned int temp = num;
 
 	while (num / 8 != 0)
 	{
@@ -23,8 +23,8 @@ int print_oct(va_list val)
 
 	for (i = 0; i < counter; i++)
 	{
-		array[i] = tem % 8;
-		tem /= 8;
+		array[i] = temp % 8;
+		temp /= 8;
 	}
 	for (i = counter - 1; i >= 0; i--)
 	{
@@ -33,4 +33,3 @@ int print_oct(va_list val)
 	free(array);
 	return (counter);
 }
-
